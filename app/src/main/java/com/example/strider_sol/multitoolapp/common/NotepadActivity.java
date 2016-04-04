@@ -5,15 +5,13 @@ import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.provider.SyncStateContract;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
+import android.support.v4.app.Fragment;
+import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.view.Menu;
-import android.view.MenuItem;
-
 
 import com.example.strider_sol.multitoolapp.R;
 import com.example.strider_sol.multitoolapp.drawing.DrawingActivity;
@@ -48,8 +46,8 @@ public class NotepadActivity extends AppCompatActivity {
         setSupportActionBar(mToolbar);
 
         mSharedPreferences = mActivity.getSharedPreferences(Constant.PREFERENCE_NAME, Context.MODE_PRIVATE);
-        mEditor= mSharedPreferences.edit();
-        DEFAULT_APP = mSharedPreferences.getInt(Constant.DEFAULT_APP,0);
+        mEditor = mSharedPreferences.edit();
+        DEFAULT_APP = mSharedPreferences.getInt(Constant.DEFAULT_APP, 0);
 
 
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
@@ -127,15 +125,15 @@ public class NotepadActivity extends AppCompatActivity {
                 .withSavedInstance(savedInstanceState)
                 .build();
 
-        if(DEFAULT_APP >0){
+        if (DEFAULT_APP > 0) {
             onTouchDrawer(DEFAULT_APP);
-        }else{
+        } else {
             onTouchDrawer(Constant.NOTEPAD);
         }
-}
+    }
 
     private void onTouchDrawer(int position) {
-        switch (position){
+        switch (position) {
             case Constant.NOTEPAD:
                 break;
             case Constant.DRAWING:
@@ -151,8 +149,21 @@ public class NotepadActivity extends AppCompatActivity {
                 startActivity(new Intent(this, RemainderActivity.class));
                 break;
             case Constant.SETTINGS:
+                openFragment(new SettingsFragment(), "Settings");
                 break;
 
         }
-    }}
+    }
+
+    private void openFragment(Fragment fragment, String screenTitle) {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .setTransition(FragmentTransaction.TRANSIT_FRAGMENT_OPEN)
+                .replace(R.id.container, fragment)
+                .addToBackStack(null)
+                .commit();
+        getSupportActionBar().setTitle(screenTitle);
+    }
+
+}
 
