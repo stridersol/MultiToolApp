@@ -1,12 +1,10 @@
-package com.example.strider_sol.multitoolapp.common;
+package com.example.strider_sol.multitoolapp.notepad;
 
 import android.app.Activity;
 import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentTransaction;
 import android.support.v7.app.AppCompatActivity;
@@ -14,6 +12,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.View;
 
 import com.example.strider_sol.multitoolapp.R;
+import com.example.strider_sol.multitoolapp.common.Constant;
+import com.example.strider_sol.multitoolapp.common.SettingsFragment;
+import com.example.strider_sol.multitoolapp.common.demo.SQLiteDemo;
 import com.example.strider_sol.multitoolapp.drawing.DrawingActivity;
 import com.example.strider_sol.multitoolapp.movie.MovieActivity;
 import com.example.strider_sol.multitoolapp.reminder.RemainderActivity;
@@ -42,22 +43,20 @@ public class NotepadActivity extends AppCompatActivity {
         setContentView(R.layout.activity_notepad);
         mActivity = this;
 
+        SQLiteDemo database = new SQLiteDemo(this);
+        database.getWritableDatabase();
+
         mToolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(mToolbar);
+
+        //  testDatabase();
 
         mSharedPreferences = mActivity.getSharedPreferences(Constant.PREFERENCE_NAME, Context.MODE_PRIVATE);
         mEditor = mSharedPreferences.edit();
         DEFAULT_APP = mSharedPreferences.getInt(Constant.DEFAULT_APP, 0);
 
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+
         AccountHeader accountHeader = new AccountHeaderBuilder()
                 .withActivity(this)
                 .withHeaderBackground(R.drawable.drawerback)
@@ -135,6 +134,7 @@ public class NotepadActivity extends AppCompatActivity {
     private void onTouchDrawer(int position) {
         switch (position) {
             case Constant.NOTEPAD:
+                openFragment(new NoteListFragment(), "Note Editor");
                 break;
             case Constant.DRAWING:
                 startActivity(new Intent(this, DrawingActivity.class));

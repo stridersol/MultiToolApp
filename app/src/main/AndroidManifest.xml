@@ -3,13 +3,28 @@
     package="com.example.strider_sol.multitoolapp">
 
     <application
+        android:name="com.orm.SugarApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+
+        <meta-data
+            android:name="DATABASE"
+            android:value="multi_use.db" />
+        <meta-data
+            android:name="VERSION"
+            android:value="1" />
+        <meta-data
+            android:name="QUERY_LOG"
+            android:value="true" />
+        <meta-data
+            android:name="com.example.strider_sol.multitoolapp"
+            android:value="com.example.strider_sol.multitoolapp.common" />
+
         <activity
-            android:name=".common.NotepadActivity"
+            android:name=".notepad.NotepadActivity"
             android:label="@string/app_name"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -21,19 +36,19 @@
         <activity
             android:name=".drawing.DrawingActivity"
             android:label="@string/title_activity_drawing"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppThemeOne" />
         <activity
             android:name=".movie.MovieActivity"
             android:label="@string/title_activity_movie"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppThemeTwo" />
         <activity
             android:name=".reminder.RemainderActivity"
             android:label="@string/title_activity_remainder"
-            android:theme="@style/AppTheme.NoActionBar" />
+            android:theme="@style/AppThemeThree" />
         <activity
             android:name=".todo.ToDoActivity"
             android:label="@string/title_activity_to_do"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppThemeFour"></activity>
     </application>
 
 </manifest>

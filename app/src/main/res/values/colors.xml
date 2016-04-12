@@ -10,4 +10,33 @@
     <color name="divider">#B6B6B6</color>
     <color name="navigationBar">@color/colorPrimaryDark</color>
     <color name="yellow">#fff200</color>
+
+
+    <color name="colorPrimary1">#4CAF50</color>
+    <color name="colorPrimarydark1">#388E3C</color>
+    <color name="colorPrimarylight1">#C8E6C9</color>
+    <color name="colorAccent1">#FFEB3B</color>
+
+
+    <color name="colorPrimary2">#8BC34A</color>
+    <color name="colorPrimarydark2">#689F38</color>
+    <color name="colorPrimarylight2">#DCEDC8</color>
+    <color name="colorAccent2">#FF5722</color>
+
+
+    <color name="colorPrimary3">#9E9E9E</color>
+    <color name="colorPrimarydark3">#616161</color>
+    <color name="colorPrimarylight3">#F5F5F5</color>
+    <color name="colorAccent3">#448AFF</color>
+
+    <color name="colorPrimary4">#009688</color>
+    <color name="colorPrimarydark4">#00796B</color>
+    <color name="colorPrimarylight4">#B2DFDB</color>
+    <color name="colorAccent4">#FFEB3B</color>
+
+
 </resources>
+
+
+
+
