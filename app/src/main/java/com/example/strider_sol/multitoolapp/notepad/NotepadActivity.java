@@ -134,7 +134,7 @@ public class NotepadActivity extends AppCompatActivity {
     private void onTouchDrawer(int position) {
         switch (position) {
             case Constant.NOTEPAD:
-                openFragment(new NoteListFragment(), "Note Editor");
+                openFragment(new NoteListFragment(), "Notes Editor");
                 break;
             case Constant.DRAWING:
                 startActivity(new Intent(this, DrawingActivity.class));
