@@ -100,12 +100,12 @@ public class NoteListAdapter extends RecyclerView.Adapter<NoteListAdapter.ViewHo
 
         @Override
         public void OnItemSelected() {
-            itemView.setBackgroundColor(Color.GRAY);
+            itemView.setBackgroundColor(Color.rgb(255, 245, 161));
         }
 
         @Override
         public void OnItemClear() {
-            itemView.setBackgroundColor(0);
+            itemView.setBackgroundColor(Color.rgb(252, 246, 198));
 
         }
     }

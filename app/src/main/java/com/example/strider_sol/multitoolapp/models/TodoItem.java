@@ -21,7 +21,7 @@ public class TodoItem extends SugarRecord {
     public String getReadableModifiedDate() {
         new GregorianCalendar();
         Calendar calendar = Calendar.getInstance();
-        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM dd,yyyy -hh:mm a");
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("MM dd,yyyy -hh:mm a");//a represents that we will use 12 hour method not 24
         simpleDateFormat.setTimeZone(calendar.getTimeZone());
         calendar.setTimeInMillis(this.getDateModified());
         Date modifiedDate = calendar.getTime();

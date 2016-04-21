@@ -12,9 +12,12 @@
     <color name="colorPrimaryText">#212121</color>
     <color name="colorAccent2">#FFC107</color>
     <color name="teal_dark">#009688</color>
-    <color name="note_back">#fff4c0</color>
-    <color name="colorPrimaryLight1">#FFF9C4</color>
-    <color name="colorPrimary2">#FFEB3B</color>
+    <color name="note_back">#ede3b0</color>
+    <color name="note_back_dark">#deb90b</color>
+
+
+    <color name="colorPrimaryLight1">#fff5a1</color>
+    <color name="colorPrimary2">#fcf6c6</color>
     <color name="colorPrimaryLight2">#C5CAE9</color>
     <color name="colorAccent3">#03A9F4</color>
     <color name="colorPrimary4">#9C27B0</color>

@@ -15,4 +15,7 @@
     <string name="Contentisrequired">Content is required</string>
     <string name="NotesList">Notes List</string>
     <string name="Settings">Settings</string>
+    <string name="date">Date</string>
+    <string name="title">TITLE</string>
+
 </resources>

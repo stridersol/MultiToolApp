@@ -24,7 +24,7 @@ public class SampleData {
         items.add(item1);
 
         TodoItem item2 = new TodoItem();
-        item2.setTitle("Get milk");
+        item2.setTitle("google");
         item2.setChecked(true);
         Calendar calender2 = GregorianCalendar.getInstance();
         calender2.add(Calendar.DAY_OF_WEEK, 2);
@@ -33,7 +33,7 @@ public class SampleData {
         items.add(item2);
 
         TodoItem item3 = new TodoItem();
-        item3.setTitle("Get milk");
+        item3.setTitle("Classified");
         item3.setChecked(false);
         Calendar calender3 = GregorianCalendar.getInstance();
         calender3.add(Calendar.DAY_OF_WEEK, 3);
